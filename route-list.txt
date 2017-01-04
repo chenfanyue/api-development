@@ -1,0 +1,14 @@
+$ pa route:list
++--------+-----------+------------------------------+-----------------+------------------------------------------------+--------------+
+| Domain | Method    | URI                          | Name            | Action                                         | Middleware   |
++--------+-----------+------------------------------+-----------------+------------------------------------------------+--------------+
+|        | GET|HEAD  | /                            |                 | Closure                                        | web          |
+|        | GET|HEAD  | api/user                     |                 | Closure                                        | api,auth:api |
+|        | GET|HEAD  | api/v1/lessons               | lessons.index   | App\Http\Controllers\LessonsController@index   | api          |
+|        | POST      | api/v1/lessons               | lessons.store   | App\Http\Controllers\LessonsController@store   | api          |
+|        | GET|HEAD  | api/v1/lessons/create        | lessons.create  | App\Http\Controllers\LessonsController@create  | api          |
+|        | GET|HEAD  | api/v1/lessons/{lesson}      | lessons.show    | App\Http\Controllers\LessonsController@show    | api          |
+|        | PUT|PATCH | api/v1/lessons/{lesson}      | lessons.update  | App\Http\Controllers\LessonsController@update  | api          |
+|        | DELETE    | api/v1/lessons/{lesson}      | lessons.destroy | App\Http\Controllers\LessonsController@destroy | api          |
+|        | GET|HEAD  | api/v1/lessons/{lesson}/edit | lessons.edit    | App\Http\Controllers\LessonsController@edit    | api          |
++--------+-----------+------------------------------+-----------------+------------------------------------------------+--------------+
